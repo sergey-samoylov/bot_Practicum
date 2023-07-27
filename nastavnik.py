@@ -16,7 +16,7 @@ LEAD_2 = os.getenv("lead_2")
 
 updater = Updater(token=TELEGRAM_TOKEN)
 
-my_git_link = 'https://github.com/sergey-samoylov?tab=repositories'
+my_git_link = 'https://github.com/sergey-samoylov/bot_Practicum'
 main_photo = 'https://nastavnik.pythonanywhere.com/static/img/Сергей.jpg'
 hat_old_photo = 'https://lh3.googleusercontent.com/a/AAcHTtfL8DHd7iJ2xjyPGaTXmRKvxa146bDt8DEn6KaKBWzBmJM=s288-c-no'
 gpt_m4a = 'http://theblackpearl.pythonanywhere.com/static/gpt.m4a'
