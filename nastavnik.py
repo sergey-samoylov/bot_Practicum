@@ -1,3 +1,4 @@
+import json
 import os
 import requests
 import sys
@@ -10,18 +11,17 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 load_dotenv()
 
 TELEGRAM_TOKEN = os.getenv("TOKEN_TELEGRAM")
-HEADING = os.getenv("heading")
-LEAD_1 = os.getenv("lead_1")
-LEAD_2 = os.getenv("lead_2")
+HOBBY_TEXT = json.loads(os.environ['hobby_text'])
+LINKS = json.loads(os.environ['links'])
 
 updater = Updater(token=TELEGRAM_TOKEN)
 
-my_git_link = 'https://github.com/sergey-samoylov/bot_Practicum'
-main_photo = 'https://nastavnik.pythonanywhere.com/static/img/Сергей.jpg'
-hat_old_photo = 'https://lh3.googleusercontent.com/a/AAcHTtfL8DHd7iJ2xjyPGaTXmRKvxa146bDt8DEn6KaKBWzBmJM=s288-c-no'
-gpt_m4a = 'http://theblackpearl.pythonanywhere.com/static/gpt.m4a'
-sql_m4a = 'http://theblackpearl.pythonanywhere.com/static/sql.m4a'
-love_m4a = 'http://theblackpearl.pythonanywhere.com/static/love.m4a'
+my_git_link = LINKS[0]
+main_photo = LINKS[1]
+hat_old_photo = LINKS[2]
+gpt_m4a = LINKS[3]
+sql_m4a = LINKS[4]
+love_m4a = LINKS[5]
 
 def wake_up(update, context):
     chat = update.effective_chat
@@ -102,15 +102,15 @@ def my_hobby(update, context):
     chat = update.effective_chat
     context.bot.send_message(
         chat_id = chat.id,
-        text = HEADING
+        text = HOBBY_TEXT[0]
     )
     context.bot.send_message(
         chat_id = chat.id,
-        text = LEAD_1
+        text = HOBBY_TEXT[1]
     )
     context.bot.send_message(
         chat_id = chat.id,
-        text = LEAD_2
+        text = HOBBY_TEXT[2]
     )
 
 updater.dispatcher.add_handler(CommandHandler('start', wake_up))
