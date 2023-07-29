@@ -12,3 +12,5 @@
 - в этот раз в меню добавил /help с иконками телеграма
 - кнопки навигации и выборка в меню отличаются (часть задания)
 - в .env использовал списки (удобно)
+
+![nastavnik bot](https://github.com/sergey-samoylov/bot_Practicum/blob/main/img/scr_bot_nastavnik.png)
